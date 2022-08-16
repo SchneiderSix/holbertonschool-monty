@@ -32,11 +32,10 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	nn->n = atoi(numbers);
-	nn->next = NULL;
+	nn->next = **node;
 	nn->prev = NULL;
 	if ((**node))
 	{
-		nn->next = (**node);
 		(**node)->prev = nn;
 	}
 	(**node) = nn;
@@ -73,11 +72,12 @@ void pall(stack_t ***node)
 void _cases(stack_t **node, char *numbers, char *opcode,
 unsigned int line_number)
 {
+
 	if (strcmp(opcode, "push"))
 	{
 		push(&node, numbers, line_number);
 	}
-	else if (strcmp(opcode, "pall"))
+	/*else if (strcmp(opcode, "pall"))
 	{
 		pall(&node);
 	}
@@ -85,6 +85,6 @@ unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: unknown instruction", line_number);
 		exit(EXIT_FAILURE);
-	}
+	}*/
 
 }
