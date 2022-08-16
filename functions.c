@@ -7,7 +7,7 @@
  * @line_number: for error in line
  * Return: nothing
  */
-void push(stack_t ***node, char ***numbers,  unsigned int line_number)
+void push(stack_t ***node, char *numbers,  unsigned int line_number)
 {
 	stack_t *nn = NULL;
 	int i;
@@ -71,13 +71,13 @@ void pall(stack_t ***node)
  * @line_number: for error in line
  * Return: nothing
  */
-void _cases(stack_t **node, char **numbers, char **opcode,
+void _cases(stack_t **node, char *numbers, char *opcode,
 unsigned int line_number)
 {
 
 	if (strcmp(opcode, "push") == 0)
 	{
-		push(&node, &numbers, line_number);
+		push(&node, numbers, line_number);
 	}
 	else if (strcmp(opcode, "pall") == 0)
 	{
