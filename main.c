@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	}
 	while (getline(&buffer, &size, stdin) != -1)
 	{
-
+		line_number++;
 		opcode = strtok(&buffer, " \t$");
 		if (strcmp(opcode, "push") == 0)
 		{
@@ -41,11 +41,9 @@ int main(int argc, char *argv[])
 		{
 			/*every other opcode less of course op push*/
 		}
-		line_number++;
 
 	}
-	fclose(o);
-	free(buffer);
+	fclose(o), free(buffer);
 	exit(99);
 
 }
