@@ -28,21 +28,13 @@ int main(int argc, char *argv[])
 	}
 	while (getline(&buffer, &size, stdin) != -1)
 	{
-		line_number++;
+
 		opcode = strtok(buffer, " \t$");
-		if (strcmp(opcode, "push") == 0)
-		{
-			numbers = strtok(NULL, " \t$");
-			push(&node, numbers, line_number);
-
-		}
-		else
-		{
-			/*every other opcode less of course op push*/
-		}
-
+		numbers = strtok(NULL, " \t$");
+		line_number++;
+		_switch(&node, numbers, opcode, line_number);
 	}
-	fclose(o), free(buffer);
+	free(buffer), fclose(o);
 	exit(99);
 
 }

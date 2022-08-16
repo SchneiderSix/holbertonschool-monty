@@ -36,5 +36,6 @@ typedef struct instruction_s
 } instruction_t;
 
 void push(stack_t **node, char *numbers,  unsigned int line_number);
+void _switch(stack_t **node, char *numbers, char *opcode, unsigned int line_number);
 
 #endif

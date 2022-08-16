@@ -3,8 +3,8 @@
 /**
  * push - add int to header of stack
  * @node: head of stack
- * @numbers: tokens
- * @line_number: error in line
+ * @numbers: number after opcode
+ * @line_number: for error in line
  * Return: nothing
  */
 void push(stack_t **node, char *numbers,  unsigned int line_number)
@@ -40,4 +40,26 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 	}
 	(*node) = nn;
 
+}
+
+
+/**
+ * _switch - switch for every opcode
+ * 
+ * @node: head of stack 
+ * @numbers: number after opcode 
+ * @opcode: explicit name 
+ * @line_number: for error in line
+ * Return: nothing
+ */
+void _switch(stack_t **node, char *numbers, char *opcode, unsigned int line_number)
+{
+	switch (opcode)
+	{
+		case 'push':
+			push(&node, numbers, line_number);
+			break;
+		default:
+			continue;
+	}
 }
