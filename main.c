@@ -11,10 +11,9 @@ int main(int argc, char *argv[])
 {
 	FILE *o;
 	char *buffer = NULL, *opcode, *numbers;
-	stack_t node = NULL;
+	stack_t *node = NULL;
 	unsigned int line_number = 0;
-
-	size_t size 0;
+	size_t size = 0;
 
 	if (argc != 2)
 	{
@@ -30,7 +29,7 @@ int main(int argc, char *argv[])
 	while (getline(&buffer, &size, stdin) != -1)
 	{
 		line_number++;
-		opcode = strtok(&buffer, " \t$");
+		opcode = strtok(buffer, " \t$");
 		if (strcmp(opcode, "push") == 0)
 		{
 			numbers = strtok(NULL, " \t$");
