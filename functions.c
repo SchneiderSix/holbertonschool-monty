@@ -99,7 +99,7 @@ unsigned int line_number)
  */
 void free_node(stack_t *node)
 {
-	stack_t *tmp = *node;
+	stack_t *tmp;
 
 	while (*node)
 	{
