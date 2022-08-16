@@ -19,7 +19,7 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 	}
 	for (i = 0; numbers[i] != '\0'; i++)
 	{
-		if (!isdigit(numbers[i]))
+		if (isdigit(numbers[i]) == 0)
 		{
 			fprintf(stderr, "L%d: unknown instruction\n", line_number);
 			exit(EXIT_FAILURE);
@@ -32,13 +32,14 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	nn->n = atoi(numbers);
-	nn->next = *node;
+	nn->next = NULL;
 	nn->prev = NULL;
-	if ((*node))
+	if (*node)
 	{
+		nn->next = *node;
 		(*node)->prev = nn;
 	}
-	(*node) = nn;
+	*node = nn;
 
 }
 
