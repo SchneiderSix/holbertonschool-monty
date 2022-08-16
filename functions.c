@@ -14,21 +14,21 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 
 	if (!numbers)
 	{
-		printf("L%d: unknown instruction", line_number);
+		fprintf(stderr, "L%d: unknown instruction\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; numbers[i] != '\0'; i++)
 	{
 		if (!isdigit(numbers[i]))
 		{
-			printf("L%d: unknown instruction", line_number);
+			fprintf(stderr, "L%d: unknown instruction\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
 	nn = malloc(sizeof(stack_t));
 	if (!nn)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	nn->n = atoi(numbers);
@@ -82,7 +82,7 @@ unsigned int line_number)
 	}
 	else
 	{
-		printf("L%d: unknown instruction", line_number);
+		fprintf(stderr, "L%d: unknown instruction", line_number);
 		exit(EXIT_FAILURE);
 	}
 
