@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 			push(&node, numbers, line_number);
 		}*/
 	}
-	free(buffer), fclose(o);
+	free_node(node), free(buffer), fclose(o);
 	return (EXIT_SUCCESS);
 
 }

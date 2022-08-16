@@ -90,3 +90,21 @@ unsigned int line_number)
 	}
 
 }
+
+/**
+ * free_node - free a node
+ *
+ * @node: node to be eliminated
+ * Return: nothing
+ */
+void free_node(stack_t *node)
+{
+	stack_t *tmp = *node;
+
+	while (*node)
+	{
+		tmp = node->next;
+		free(node);
+		node = tmp;
+	}
+}
