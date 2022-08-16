@@ -38,6 +38,7 @@ typedef struct instruction_s
 
 void push(stack_t ***node, char *numbers,  unsigned int line_number);
 void pall(stack_t ***node);
-void _cases(stack_t **node, char *numbers, char *opcode, unsigned int line_number);
+void _cases(stack_t **node, char *numbers, char *opcode,
+unsigned int line_number);
 
 #endif
