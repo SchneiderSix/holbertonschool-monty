@@ -35,6 +35,6 @@ int main(int argc, char *argv[])
 		_cases(&node, numbers, opcode, line_number);
 	}
 	free(buffer), fclose(o);
-	return(success);
+	return(EXIT_SUCCESS);
 
 }
