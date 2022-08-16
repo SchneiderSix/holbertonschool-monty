@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	stack_t *node = NULL;
 	unsigned int line_number = 0;
 	size_t size = 0;
-	size_t rd;
+	ssize_t rd;
 
 	if (argc != 2)
 	{
