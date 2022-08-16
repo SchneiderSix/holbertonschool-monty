@@ -39,4 +39,5 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 		(*node)->prev = nn;
 	}
 	(*node) = nn;
+
 }

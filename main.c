@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	size_t size 0;
 
+
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
@@ -46,4 +47,5 @@ int main(int argc, char *argv[])
 	fclose(o);
 	free(buffer);
 	exit(99);
+
 }
