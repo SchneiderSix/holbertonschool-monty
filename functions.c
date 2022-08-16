@@ -32,10 +32,11 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	nn->n = atoi(numbers);
-	nn->next = **node;
+	nn->next = NULL;
 	nn->prev = NULL;
-	if ((**node) != NULL)
+	if ((**node))
 	{
+		nn->next = (**node);
 		(**node)->prev = nn;
 	}
 	(**node) = nn;
