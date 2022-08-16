@@ -14,7 +14,7 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 
 	if (!numbers)
 	{
-		fprintf(stderr, "L%d: unknown instruction\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; numbers[i] != '\0'; i++)

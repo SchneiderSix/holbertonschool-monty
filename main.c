@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 		if (!opcode)
 			continue;
 		/*_cases(&node, numbers, opcode, line_number);*/
+		numbers = strtok(NULL, " \t\n\r");
 		if (strcmp(opcode, "push") == 0)
 		{
-			numbers = strtok(NULL, " \t\n\r");
 			push(&node, numbers, line_number);
 		}
 	}
