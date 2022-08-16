@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (r = getline(&buffer, &size, o) != -1)
+	while ((r = getline(&buffer, &size, o)) != -1)
 	{
 		line_number++;
 		opcode = strtok(buffer, " \t\n\r");
