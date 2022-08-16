@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		if (strcmp(opcode, "push") == 0)
 		{
 			numbers = strtok(NULL, " \t$");
-			push(&node, numbers, line_number)
+			push(&node, numbers, line_number);
 
 		}
 		else
