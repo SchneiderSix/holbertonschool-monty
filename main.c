@@ -2,18 +2,18 @@
 
 /**
  * main - interpreter for monty
- * 
- * @argc: arguments count 
+ *
+ * @argc: arguments count
  * @argv: arguments array
  * Return: error or success
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	FILE *o;
 	char *buffer = NULL, *opcode, *numbers;
-	size_t size 0;
 	stack_t node = NULL;
 	unsigned int line_number = 0;
+	size_t size 0;
 
 	if (argc != 2)
 	{
@@ -28,7 +28,7 @@ int main (int argc, char *argv[])
 	}
 	while (getline(&buffer, &size, stdin) != -1)
 	{
-		
+
 		opcode = strtok(&buffer, " \t$");
 		if (strcmp(opcode, "push") == 0)
 		{
@@ -46,5 +46,4 @@ int main (int argc, char *argv[])
 	fclose(o);
 	free(buffer);
 	exit(99);
-
 }
