@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 	while (getline(&buffer, &size, stdin) != -1)
 	{
 
-		opcode = strtok(buffer, " \t$");
-		numbers = strtok(NULL, " \t$");
+		opcode = strtok(buffer, " \t\n\r");
+		numbers = strtok(NULL, " \t\n\r");
 		line_number++;
 		_cases(&node, numbers, opcode, line_number);
 	}
 	free(buffer), fclose(o);
-	return(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 
 }
