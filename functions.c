@@ -23,7 +23,7 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 			continue;
 		if (isdigit(numbers[i]) == 0)
 		{
-			fprintf(stderr, "L%d: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
