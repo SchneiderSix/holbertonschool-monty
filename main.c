@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		opcode = strtok(buffer, " \t$");
 		numbers = strtok(NULL, " \t$");
 		line_number++;
-		_switch(&node, numbers, opcode, line_number);
+		_cases(&node, numbers, opcode, line_number);
 	}
 	free(buffer), fclose(o);
 	exit(99);

@@ -44,7 +44,7 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 
 
 /**
- * _switch - switch for every opcode
+ * _cases - cases for every opcode
  * 
  * @node: head of stack 
  * @numbers: number after opcode 
@@ -52,14 +52,8 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
  * @line_number: for error in line
  * Return: nothing
  */
-void _switch(stack_t **node, char *numbers, char *opcode, unsigned int line_number)
+void _cases(stack_t **node, char *numbers, char *opcode, unsigned int line_number)
 {
-	switch (&opcode)
-	{
-		case 'push':
-			push(&node, numbers, line_number);
-			break;
-		default:
-			continue;
-	}
+	if (strcmp(opcode, "push"))
+		push(&node, numbers, line_number);
 }
