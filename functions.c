@@ -42,7 +42,24 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 
 }
 
+/**
+ * pall - print ints from stack
+ * 
+ * @node: head of stack
+ * Return: nothing 
+ */
+void pall(stack_t ***node)
+{
+	stack_t *tmp = **node;
 
+	if (!tmp)
+		return;
+	while(tmp)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+	}
+}
 /**
  * _cases - cases for every opcode
  * 
@@ -55,5 +72,11 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 void _cases(stack_t **node, char *numbers, char *opcode, unsigned int line_number)
 {
 	if (strcmp(opcode, "push"))
+	{
 		push(&node, numbers, line_number);
+	}
+	else if (strcmp(opcode, "pall"))
+	{
+		pall(&node);
+	}
 }
