@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			continue;
 		numbers = strtok(NULL, " \t\n\r");
 		/*_cases(&node, numbers, opcode, line_number);*/
-		if (strcmp(opcode, "push"))
+		if (strcmp(opcode, "push") == 0)
 			push(&node, numbers, line_number);
 	}
 	free(buffer), fclose(o);
