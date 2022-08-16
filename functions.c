@@ -7,7 +7,7 @@
  * @line_number: for error in line
  * Return: nothing
  */
-void push(stack_t **node, char *numbers,  unsigned int line_number)
+void push(stack_t ***node, char *numbers,  unsigned int line_number)
 {
 	stack_t *nn = NULL;
 	int i;
@@ -19,7 +19,7 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 	}
 	for (i = 0; numbers[i] != '\0'; i++)
 	{
-		if (!isdigit(numbers[i]))
+		if (isdigit(numbers[i]) == 0)
 		{
 			printf("L%d: unknown instruction for push", line_number);
 			exit(EXIT_FAILURE);
@@ -54,7 +54,7 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
  */
 void _switch(stack_t **node, char *numbers, char *opcode, unsigned int line_number)
 {
-	switch (opcode)
+	switch (&opcode)
 	{
 		case 'push':
 			push(&node, numbers, line_number);
