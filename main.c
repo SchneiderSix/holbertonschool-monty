@@ -35,10 +35,6 @@ int main(int argc, char *argv[])
 			continue;
 		numbers = strtok(NULL, " \t\n\r");
 		_cases(&node, numbers, opcode, line_number);
-		/*if (strcmp(opcode, "push") == 0)
-		{
-			push(&node, numbers, line_number);
-		}*/
 	}
 	free_node(node), free(buffer), fclose(o);
 	return (EXIT_SUCCESS);
