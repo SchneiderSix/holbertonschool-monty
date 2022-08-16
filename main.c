@@ -28,8 +28,9 @@ int main(int argc, char *argv[])
 	}
 	while (getline(&buffer, &size, stdin) != -1)
 	{
-
 		opcode = strtok(buffer, " \t\n\r");
+		if (!opcode)
+			continue;
 		numbers = strtok(NULL, " \t\n\r");
 		line_number++;
 		_cases(&node, numbers, opcode, line_number);
