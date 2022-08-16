@@ -85,7 +85,7 @@ unsigned int line_number)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: unknown instruction pushe", line_number);
+		fprintf(stderr, "L%d: unknown instruction %c", line_number, opcode);
 		exit(EXIT_FAILURE);
 	}
 
