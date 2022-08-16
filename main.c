@@ -1,29 +1,47 @@
 #include "monty.h"
 
+/**
+ * main - interpreter for monty
+ * 
+ * @argc: arguments count 
+ * @argv: arguments array
+ * Return: error or success
+ */
 int main (int argc, char *argv[])
 {
 	FILE *o;
-	char *buffer = NULL, *token;
+	char *buffer = NULL, *opcode, *numbers;
 	size_t size 0;
-	stack_t node;
+	stack_t node = NULL;
 	unsigned int line_number = 0;
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file");
+		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	o = fopen(argv[1], "r");
 	if (!o)
 	{
-		fprintf(stderr, "Error: Can't open file %p", argv[1]);
+		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&buffer, &size, stdin) != -1)
 	{
-		token = strtok(&buffer, "\n");
-		process(&buffer, node, line_number);
+		
+		opcode = strtok(&buffer, " \t$");
+		if (strcmp(opcode, "push") == 0)
+		{
+			numbers = strtok(NULL, " \t$");
+			push(&node, numbers, line_number)
+
+		}
+		else
+		{
+			/*every other opcode less of course op push*/
+		}
 		line_number++;
+
 	}
 	fclose(o);
 	free(buffer);
