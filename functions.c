@@ -77,7 +77,7 @@ unsigned int line_number)
 	{
 		push(&node, numbers, line_number);
 	}
-	/*else if (strcmp(opcode, "pall"))
+	else if (strcmp(opcode, "pall"))
 	{
 		pall(&node);
 	}
@@ -85,6 +85,6 @@ unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: unknown instruction", line_number);
 		exit(EXIT_FAILURE);
-	}*/
+	}
 
 }
