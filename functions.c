@@ -14,14 +14,14 @@ void push(stack_t ***node, char *numbers,  unsigned int line_number)
 
 	if (!numbers)
 	{
-		printf("L%d: unknown instruction for push", line_number);
+		printf("L%d: unknown instruction", line_number);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; numbers[i] != '\0'; i++)
 	{
 		if (!isdigit(numbers[i]))
 		{
-			printf("L%d: unknown instruction for push", line_number);
+			printf("L%d: unknown instruction", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -79,6 +79,11 @@ unsigned int line_number)
 	else if (strcmp(opcode, "pall"))
 	{
 		pall(&node);
+	}
+	else
+	{
+		printf("L%d: unknown instruction", line_number);
+		exit(EXIT_FAILURE);
 	}
 
 }
