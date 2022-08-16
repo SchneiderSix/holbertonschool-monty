@@ -26,18 +26,14 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&buffer, &size, stdin) != -1)
+	while (getline(&buffer, &size, o) != -1)
 	{
+		line_number++;
 		opcode = strtok(buffer, " \t\n\r");
 		if (!opcode)
 			continue;
 		numbers = strtok(NULL, " \t\n\r");
-		line_number++;
-		/*_cases(&node, numbers, opcode, line_number);*/
-		if (strcmp(opcode, "push") == 0)
-		{
-			push(&node, numbers, line_number);
-		}
+		_cases(&node, numbers, opcode, line_number);
 	}
 	free(buffer), fclose(o);
 	return (EXIT_SUCCESS);
