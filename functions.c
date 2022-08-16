@@ -7,7 +7,7 @@
  * @line_number: for error in line
  * Return: nothing
  */
-void push(stack_t **node, char *numbers,  unsigned int line_number)
+void push(stack_t ***node, char *numbers,  unsigned int line_number)
 {
 	stack_t *nn = NULL;
 	int i;
@@ -34,13 +34,13 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	nn->n = atoi(numbers);
-	nn->next = *node;
+	nn->next = **node;
 	nn->prev = NULL;
-	if (*node)
+	if (**node)
 	{
-		(*node)->prev = nn;
+		(**node)->prev = nn;
 	}
-	*node = nn;
+	**node = nn;
 
 }
 
@@ -70,7 +70,7 @@ void pall(stack_t ***node)
  * @opcode: explicit name
  * @line_number: for error in line
  * Return: nothing
- *
+ */
 void _cases(stack_t **node, char *numbers, char *opcode,
 unsigned int line_number)
 {
@@ -89,4 +89,4 @@ unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-}*/
+}

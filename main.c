@@ -33,12 +33,12 @@ int main(int argc, char *argv[])
 		opcode = strtok(buffer, " \t\n\r");
 		if (!opcode)
 			continue;
-		/*_cases(&node, numbers, opcode, line_number);*/
 		numbers = strtok(NULL, " \t\n\r");
-		if (strcmp(opcode, "push") == 0)
+		_cases(&node, numbers, opcode, line_number);
+		/*if (strcmp(opcode, "push") == 0)
 		{
 			push(&node, numbers, line_number);
-		}
+		}*/
 	}
 	free(buffer), fclose(o);
 	return (EXIT_SUCCESS);
