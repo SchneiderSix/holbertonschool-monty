@@ -29,7 +29,7 @@ void push(stack_t **node, char *numbers,  unsigned int line_number)
 	if (!nn)
 	{
 		printf("Error: malloc failed");
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	nn->n = atoi(numbers);
 	nn->next = *node;
