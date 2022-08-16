@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
 	char *buffer = NULL, *opcode, *numbers;
 	stack_t *node = NULL;
 	unsigned int line_number = 0;
-	size_t r;
 	size_t size = 0;
+	size_t rd;
 
 	if (argc != 2)
 	{
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((r = getline(&buffer, &size, o)) != -1)
+	while ((rd = getline(&buffer, &size, o)) != -1)
 	{
 		line_number++;
 		opcode = strtok(buffer, " \t\n\r");
