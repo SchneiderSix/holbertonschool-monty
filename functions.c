@@ -99,12 +99,15 @@ unsigned int line_number)
 	{
 		pint(&node, line_number);
 	}
+	else if (strcmp(opcode, "pop") == 0)
+	{
+		_pop(&node, line_number);
+	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
 	}
-
 }
 
 /**
