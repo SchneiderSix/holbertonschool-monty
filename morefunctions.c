@@ -78,7 +78,6 @@ void add(stack_t ***node, unsigned int line_number)
 	int tmp1;
 	int tmp2;
 	int sum;
-	stack_t *tmp;
 
 	if (node_len(node) < 2)
 	{
