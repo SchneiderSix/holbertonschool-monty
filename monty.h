@@ -41,5 +41,6 @@ void pall(stack_t ***node);
 void _cases(stack_t **node, char *numbers, char *opcode,
 unsigned int line_number);
 void free_node(stack_t *node);
+void pint(stack_t ***node);
 
 #endif

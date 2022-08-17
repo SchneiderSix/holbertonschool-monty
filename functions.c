@@ -62,6 +62,15 @@ void pall(stack_t ***node)
 		tmp = tmp->next;
 	}
 }
+
+void pint(stack_t ***node)
+{
+	stack_t *tmp = **node;
+
+	if(!tmp)
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	printf("%d\n", tmp->n);
+}
 /**
  * _cases - cases for every opcode
  *
@@ -82,6 +91,10 @@ unsigned int line_number)
 	else if (strcmp(opcode, "pall") == 0)
 	{
 		pall(&node);
+	}
+	else if (strcmp(opcode, "pint") == 0)
+	{
+		pint(&node);
 	}
 	else
 	{
