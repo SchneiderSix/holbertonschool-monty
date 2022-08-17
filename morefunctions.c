@@ -65,3 +65,29 @@ void swap(stack_t ***node, unsigned int line_number)
 	(**node)->n = tmp2;
 	(**node)->next->n = tmp1;
 }
+
+/**
+ * add - adds the top two elements of the stack
+ *
+ * @node: head
+ * @line_number: line for error
+ * Return: nothing
+ */
+void add(stack_t ***node, unisgned int line_number)
+{
+	int tmp1;
+	int tmp2;
+	int sum;
+	stack_t *tmp;
+
+	if (node_len(node) < 2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp1 = (**node)->n;
+	tmp2 = (**node)->next->n;
+	sum = tmp1 + tmp2;
+	(**node)->next->n = sum;
+	_pop(node, line_number);
+}
