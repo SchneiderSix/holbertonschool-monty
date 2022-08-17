@@ -34,7 +34,7 @@ size_t node_len(stack_t ***node)
 	stack_t *tmp;
 	unsigned int i = 0;
 
-	tmp = ***node;
+	tmp = **node;
 	while (tmp)
 	{
 		tmp = tmp->next;
@@ -52,8 +52,8 @@ size_t node_len(stack_t ***node)
  */
 void swap(stack_t ***node, unsigned int line_number)
 {
-	int *tmp1;
-	int *tmp2;
+	int tmp1;
+	int tmp2;
 
 	if (node_len(node) < 2)
 	{
