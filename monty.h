@@ -42,6 +42,6 @@ void _cases(stack_t **node, char *numbers, char *opcode,
 unsigned int line_number);
 void free_node(stack_t *node);
 void pint(stack_t ***node, unsigned int line_number);
-void _pop(stack_t **stack, unsigned int line_number);
+void _pop(stack_t ***stack, unsigned int line_number);
 
 #endif
