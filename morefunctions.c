@@ -21,3 +21,47 @@ void _pop(stack_t ***stack, unsigned int line_number)
 	free(**stack);
 	**stack = temp;
 }
+
+
+/**
+ * node_len - explicit name
+ *
+ * @node: head
+ * Return: len of nodes
+ */
+size_t node_len(stack_t ***node)
+{
+	stack_t *tmp;
+	unsigned int i = 0;
+
+	tmp = ***node;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * swap - swap data of first and second nodes
+ *
+ * @node: head 
+ * @line_number: line for error
+ * Return: nothing 
+ */
+void swap(stack_t ***node, unsigned int line_number)
+{
+	int *tmp1;
+	int *tmp2;
+
+	if (node_len(node) < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp1 = (**node)->n;
+	tmp2 = (**node)->next->n;
+	(**node)->n = tmp2;
+	(**node)->next->n = tmp1;
+}

@@ -43,5 +43,7 @@ unsigned int line_number);
 void free_node(stack_t *node);
 void pint(stack_t ***node, unsigned int line_number);
 void _pop(stack_t ***stack, unsigned int line_number);
+size_t node_len(stack_t ***node);
+void swap(stack_t ***node, unsigned int line_number);
 
 #endif

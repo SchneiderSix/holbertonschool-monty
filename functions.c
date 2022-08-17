@@ -86,7 +86,6 @@ void pint(stack_t ***node, unsigned int line_number)
 void _cases(stack_t **node, char *numbers, char *opcode,
 unsigned int line_number)
 {
-
 	if (strcmp(opcode, "push") == 0)
 	{
 		push(&node, numbers, line_number);
@@ -102,6 +101,10 @@ unsigned int line_number)
 	else if (strcmp(opcode, "pop") == 0)
 	{
 		_pop(&node, line_number);
+	}
+	else if (strcmp(opcode, "swap") == 0)
+	{
+		swap(&node, line_number);
 	}
 	else
 	{
