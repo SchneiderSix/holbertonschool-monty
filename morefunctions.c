@@ -90,3 +90,10 @@ void add(stack_t ***node, unsigned int line_number)
 	(**node)->next->n = sum;
 	_pop(node, line_number);
 }
+
+/**
+ * nop - Don't do a thing
+ *
+ */
+void nop(void)
+{}

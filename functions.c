@@ -110,6 +110,10 @@ unsigned int line_number)
 	{
 		add(&node, line_number);
 	}
+	else if (strcmp(opcode, "nop") == 0)
+	{
+		nop();
+	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

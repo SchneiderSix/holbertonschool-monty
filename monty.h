@@ -46,5 +46,6 @@ void _pop(stack_t ***stack, unsigned int line_number);
 size_t node_len(stack_t ***node);
 void swap(stack_t ***node, unsigned int line_number);
 void add(stack_t ***node, unsigned int line_number);
+void nop(void);
 
 #endif
