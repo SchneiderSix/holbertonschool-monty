@@ -63,7 +63,7 @@ void pall(stack_t ***node)
 	}
 }
 
-void pint(stack_t ***node)
+void pint(stack_t ***node, unsigned int line_number)
 {
 	stack_t *tmp = **node;
 
