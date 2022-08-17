@@ -95,7 +95,7 @@ unsigned int line_number)
 	}
 	else if (strcmp(opcode, "pint") == 0)
 	{
-		pint(&node);
+		pint(&node, line_number);
 	}
 	else
 	{
