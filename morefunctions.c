@@ -46,9 +46,9 @@ size_t node_len(stack_t ***node)
 /**
  * swap - swap data of first and second nodes
  *
- * @node: head 
+ * @node: head
  * @line_number: line for error
- * Return: nothing 
+ * Return: nothing
  */
 void swap(stack_t ***node, unsigned int line_number)
 {

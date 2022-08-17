@@ -63,11 +63,18 @@ void pall(stack_t ***node)
 	}
 }
 
+/**
+ * pint - print value of head
+ *
+ * @node: head
+ * @line_number: for error in line
+ * Return: nothing
+ */
 void pint(stack_t ***node, unsigned int line_number)
 {
 	stack_t *tmp = **node;
 
-	if(!tmp)
+	if (!tmp)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
