@@ -73,7 +73,7 @@ void swap(stack_t ***node, unsigned int line_number)
  * @line_number: line for error
  * Return: nothing
  */
-void add(stack_t ***node, unisgned int line_number)
+void add(stack_t ***node, unsigned int line_number)
 {
 	int tmp1;
 	int tmp2;
